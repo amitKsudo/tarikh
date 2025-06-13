@@ -1,38 +1,214 @@
-.App {
+@font-face {
+  font-family: emFont;
+  src: url(assets/em-font.woff);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('assets/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.tarikh-text {
+  font-family: emFont;
+  letter-spacing: 3px;
+  color: #FFF;
+  background-color: #A1887F;
+  padding: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tarikh-text:hover {
+  font-family: emFont;
+  letter-spacing: 3px;
+  color: #A1887F;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  color: #fff;
   text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.selectors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.selectors select,
+.selectors input {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  flex: 1 1 45%;
+  min-width: 120px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.selectors select:hover,
+.selectors input:hover,
+.selectors select:focus,
+.selectors input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
+}
+
+.events-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  width: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  max-height: 300px;
 }
 
-.App-link {
-  color: #61dafb;
+.events-heading {
+  margin-top: 0px;
+  flex-shrink: 0;
+  margin-bottom: 16px;
+  width: 100%;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.events-list {
+  overflow-y: auto;
+  width: 100%;
+  max-height: 230px;
+}
+
+.events-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.events-list li {
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 10px;
+  word-wrap: break-word;
+}
+
+.events-list a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.events-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.events-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.events-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.events-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.disclaimer {
+  font-size: 10px;
+  color: #fff;
+}
+
+.owner-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.github-link {
+  filter: invert(100%);
+  transition: transform 0.3s ease;
+  margin-left: 4px;
+}
+
+.github-link:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+  html, body {
+    width: 100%;
+    padding: 16px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .selectors {
+    flex-direction: column;
+  }
+
+  .selectors select,
+  .selectors input {
+    flex: 1 1 100%;
+    font-size: 14px;
+  }
+
+  .main-container {
+    max-width: 300px;
+    padding: 16px;
+    max-height: 95vh;
+  }
+
+  .events-container {
+    max-height: 250px;
+  }
+
+  .events-list {
+    max-height: 190px;
   }
 }
