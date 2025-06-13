@@ -10,6 +10,10 @@ A React app that shows historical events by date, using data from [History API b
 - Responsive design for desktop and mobile.
 - Links to Wikipedia for more info on events.
 
+## Live Demo
+
+https://tarikh.live
+
 ## How to Run
 
 Clone the repository, install dependencies, and start the development server:
